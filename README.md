@@ -10,7 +10,7 @@
 
 <p>The data for this assignment are available from the course web site as a single zip file:</p>
 
-<p><a href="https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2FNEI_data.zip" title="Data for Peer Assessment"</a></p>
+<p><a href="https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2FNEI_data.zip"> Data for Peer Assessment</a></p>
 
 <p>The zip file contains two files:</p>
 
