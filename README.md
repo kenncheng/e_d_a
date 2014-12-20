@@ -2,27 +2,27 @@
 
 <h2>Introduction</h2>
 
-<h3>Fine particulate matter ($PM_(2.5)$) is an ambient air pollutant for which there is strong evidence that it is harmful to human health.  In the United States, the Environmental Protection Agency (EPA) is tasked with setting national ambient air quality for fine PM and for tracking the emissions of this pollutant into the atmosphere.  Approximately every 3 years, the EPA releases its database on emissions of $PM_(2.5)$. This database is known as the National Emissions Inventory (NEI).  You can read more information about the NEI at the EPA National Emissions Inventory website.</h3>
+<p>Fine particulate matter ($PM_(2.5)$) is an ambient air pollutant for which there is strong evidence that it is harmful to human health.  In the United States, the Environmental Protection Agency (EPA) is tasked with setting national ambient air quality for fine PM and for tracking the emissions of this pollutant into the atmosphere.  Approximately every 3 years, the EPA releases its database on emissions of $PM_(2.5)$. This database is known as the National Emissions Inventory (NEI).  You can read more information about the NEI at the EPA National Emissions Inventory website.</p>
 
-<h3>For each year and for each type of PM source, the NEI records how many tons of $PM_(2.5)$ were emitted from that source over the course of the entire year.  The data that you will use for this assignment are for 1999, 2002, 2005, and 2008.</h3>
+<p>For each year and for each type of PM source, the NEI records how many tons of $PM_(2.5)$ were emitted from that source over the course of the entire year.  The data that you will use for this assignment are for 1999, 2002, 2005, and 2008.</p>
 
 <h2>Data</h2>
 
-<h3>The data for this assignment are available from the course web site as a single zip file:</h3>
+<p>The data for this assignment are available from the course web site as a single zip file:</p>
 
-<p><a href="https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2FNEI_data.zip"Data for Peer Assessment</a></p>
+<p><a href="https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2FNEI_data.zip" title="Data for Peer Assessment"</a></p>
 
-<h3>The zip file contains two files:</h3>
+<p>The zip file contains two files:</p>
 
-<h3>$PM_(2.5)$ Emissions Data (summarySCC_PM25.rds): This file contains a data frame with all of the PM2.5 emissions data for 1999, 2002, 2005, and 2008.  For each year, the table contains numbers of tons of $PM_(2.5)$ emitted from a specific type of source for the entire year.  Here are the first few rows.</h3>
+<p>$PM_(2.5)$ Emissions Data (summarySCC_PM25.rds): This file contains a data frame with all of the PM2.5 emissions data for 1999, 2002, 2005, and 2008.  For each year, the table contains numbers of tons of $PM_(2.5)$ emitted from a specific type of source for the entire year.  Here are the first few rows.</p>
 
-<h3>##     fips      SCC  Pollutant Emissions   type  year</h3>
-<h3>## 4  09001 10100401   PM25-PRI    15.714  POINT  1999</h3>
-<h3>## 8  09001 10100404   PM25-PRI   234.178  POINT  1999</h3>
-<h3>## 12 09001 10100501   PM25-PRI     0.128  POINT  1999</h3>
-<h3>## 16 09001 10100401   PM25-PRI     2.036  POINT  1999</h3>
-<h3>## 20 09001 10100504   PM25-PRI     0.388  POINT  1999</h3>
-<h3>## 24 09001 10100602   PM25-PRI     1.490  POINT  1999</h3>
+<p>##     fips      SCC  Pollutant Emissions   type  year</p>
+<p>## 4  09001 10100401   PM25-PRI    15.714  POINT  1999</p>
+<p>## 8  09001 10100404   PM25-PRI   234.178  POINT  1999</p>
+<p>## 12 09001 10100501   PM25-PRI     0.128  POINT  1999</p>
+<p>## 16 09001 10100401   PM25-PRI     2.036  POINT  1999</p>
+<p>## 20 09001 10100504   PM25-PRI     0.388  POINT  1999</p>
+<p>## 24 09001 10100602   PM25-PRI     1.490  POINT  1999</p>
 
 <ul>
 <li>fips : A five-digit number (represented as a string) indicating the U.S. county</li>
@@ -33,23 +33,23 @@
 <li>year : The year of emissions recorded</li>
 </ul>
 
-<h3>Source Classification Code Table (Source_Classification_Code.rds): This table provides a mapping from the SCC digit strings in the Emissions table to the actual name of the $PM_(2.5)$ source.  The sources are categorized in a few different ways from more general to more specific and you may choose to explore whatever categories you think are most useful.  For example, source 10100101 is known as Ext Comb/Electric Gen/Anthracite Coal/ Pulverized Coal.</h3>
+<p>Source Classification Code Table (Source_Classification_Code.rds): This table provides a mapping from the SCC digit strings in the Emissions table to the actual name of the $PM_(2.5)$ source.  The sources are categorized in a few different ways from more general to more specific and you may choose to explore whatever categories you think are most useful.  For example, source 10100101 is known as Ext Comb/Electric Gen/Anthracite Coal/ Pulverized Coal.</p>
 
-<h3>You can read each of the two files using the readRDS() function in R.  For example, reading in each file can be done with the following code:
+<p>You can read each of the two files using the readRDS() function in R.  For example, reading in each file can be done with the following code:</p>
 
-<h3>## This first line will likely take a few seconds. Be patient!</h3>
-<h3>NEI - readRDS("summarySCC_PM25.rds")</h3>
-<h3>SCC - readRDS("Source_Classification_Code.rds")</h3>
+<p>## This first line will likely take a few seconds. Be patient!</p>
+<p>NEI - readRDS("summarySCC_PM25.rds")</p>
+<p>SCC - readRDS("Source_Classification_Code.rds")</p>
 
-<h3>as long as each of those files is in your current working directory (check by calling dir() and see if those files are in the listing).</h3>
+<p>as long as each of those files is in your current working directory (check by calling dir() and see if those files are in the listing).</p>
 
 <h2>Assignment</h2>
 
-<h3>The overall goal of this assignment is to explore the National Emissions Inventory database and see what it says about fine particulate matter pollution in the United States over the 10-year period 1999 to 2008.  You may use any R package you want to support the analysis.</h3>
+<p>The overall goal of this assignment is to explore the National Emissions Inventory database and see what it says about fine particulate matter pollution in the United States over the 10-year period 1999 to 2008.  You may use any R package you want to support the analysis.</p>
 
 <h2>Questions</h2>
 
-<h3>You must address the following questions and tasks in your exploratory analysis.  For each question/task you will need to make a single plot.  Unless specified, you can use any plotting system in R to make your plot.
+<p>You must address the following questions and tasks in your exploratory analysis.  For each question/task you will need to make a single plot.  Unless specified, you can use any plotting system in R to make your plot.</p>
 
 <ol>
 <li>Have total emissions from $PM_(2.5)$ decreased in the United States from 1999 to 2008? Using the base plotting system, make a plot showing the total $PM_(2.5)$ emission from all sources for each of the years 1999, 2002, 2005, and 2008.</li>
@@ -62,7 +62,7 @@
 
 <h2>Making and Submitting Plots</h2>
 
-<h3>For each plot you should</h3>
+<p>For each plot you should</p>
 
 <ul>
 <li>Construct the plot and save it to a PNG file.</li>
