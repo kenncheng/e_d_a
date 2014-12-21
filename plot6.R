@@ -4,7 +4,7 @@
 # Load ggplot2 library
 library(ggplot2)
 
-# Loads RDS data
+# Loads RDS data for PM2.5 Emissions Data and for Source Classification Code Table
 NEI <- readRDS("./EDA/Project_2/summarySCC_PM25.rds")
 SCC <- readRDS("./EDA/Project_2/Source_Classification_Code.rds")
 
@@ -24,6 +24,7 @@ CA.df <- aggregate(CA.onroad[, 'Emissions'], by=list(CA.onroad$year), sum)
 colnames(CA.df) <- c('year', 'Emissions')
 CA.df$City <- paste(rep('CA', 4))
 
+# Combine MD and CA data
 df <- as.data.frame(rbind(CA.df, MD.df))
 
 # Generate graph into filename plot6.png

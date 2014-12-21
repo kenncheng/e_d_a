@@ -4,14 +4,14 @@
 # Load ggplot2 library
 library(ggplot2)
 
-# Loads RDS data
+# Loads RDS data for PM2.5 Emissions Data
 NEI <- readRDS("./EDA/Project_2/summarySCC_PM25.rds")
 
 # Take subset of data to include only Baltimore City, MD (fips == '24510')
 MD <- subset(NEI, fips=='24510')
 MD$year <- factor(MD$year, levels=c('1999', '2002', '2005', '2008'))
 
-# Generate graph into filename plot3.png
+# Generate plot into filename plot3.png
 png(filename = "./EDA/Project_2/plot3.png")
 
 ggplot(data=MD, aes(x=year, y=log(Emissions))) + facet_grid(. ~ type) + guides(fill=F) +

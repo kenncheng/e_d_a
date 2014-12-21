@@ -4,7 +4,7 @@
 # Load ggplot2 library
 library(ggplot2)
 
-# Loads RDS data
+# Loads RDS data for PM2.5 Emissions Data and for Source Classification Code Table
 NEI <- readRDS("./EDA/Project_2/summarySCC_PM25.rds")
 SCC <- readRDS("./EDA/Project_2/Source_Classification_Code.rds")
 
@@ -17,7 +17,7 @@ MD.onroad <- subset(NEI, fips=='24510' & type=='ON-ROAD')
 MD.df <- aggregate(MD.onroad[, 'Emissions'], by=list(MD.onroad$year), sum)
 colnames(MD.df) <- c('year', 'Emissions')
 
-# Generate graph into filename plot5.png
+# Generate plot into filename plot5.png
 png(filename = "./EDA/Project_2/plot5.png")
 
 ggplot(data=MD.df, aes(x=year, y=Emissions)) + geom_bar(aes(fill=year), stat="identity") + guides(fill=F) + 

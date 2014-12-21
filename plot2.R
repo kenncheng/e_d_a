@@ -1,13 +1,13 @@
 # Exploratory Data Analysis - Project 2, Q2
 # The original data set has been unzipped and saved in the local directory
 
-# Loads RDS data
+# Loads RDS data for PM2.5 Emissions Data
 NEI <- readRDS("./EDA/Project_2/summarySCC_PM25.rds")
 
 # Take subset of data to include only Baltimore City, MD (fips == '24510')
 MD <- subset(NEI, fips=='24510')
 
-# Generate graph into filename plot2.png
+# Generate plot into filename plot2.png
 png(filename = "./EDA/Project_2/plot2.png")
 
 barplot(tapply(X=MD$Emissions, INDEX=MD$year, FUN=sum), 
